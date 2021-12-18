@@ -1,4 +1,4 @@
-import 'package:first_app/src/datas/questions_data.dart';
+import 'package:quizz/src/datas/questions_data.dart';
 
 class Question {
   int questionOrder;

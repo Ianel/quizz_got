@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:first_app/src/helpers/view_helper.dart';
-import 'package:first_app/src/services/question_service.dart';
-import 'package:first_app/test.dart';
+import 'package:quizz/src/helpers/view_helper.dart';
+import 'package:quizz/src/services/question_service.dart';
+import 'package:quizz/test.dart';
 import 'package:flutter/material.dart';
 
 class Question extends StatefulWidget {
@@ -53,8 +53,12 @@ class _QuestionState extends State<Question> {
   Widget build(BuildContext context) {
     var localAnswers =
         widget.service.getSelectedHouse()["answers"]![questionOrder] as List;
+    var localAnswersLength = localAnswers.length;
     var localQuestions =
         widget.service.getSelectedHouse()["questions"]![questionOrder];
+
+    print(localAnswers);
+    print(localAnswersLength);
 
     return Scaffold(
       appBar: AppBar(
@@ -69,51 +73,25 @@ class _QuestionState extends State<Question> {
                 localQuestions.toString(),
               ),
             ),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minWidth: width(context) * 3 / 4),
-                    child: RaisedButton(
-                      child:
-                          Text(localAnswers.elementAt(0)["response"].toString()),
-                      onPressed: () => getAnswer(
-                        parseBool(
-                            localAnswers.elementAt(0)["isExact"].toString()),
+            Container(
+              height: 300,
+              width: width(context) * 3 / 4,
+              child: ListView.builder(
+                  itemCount: localAnswersLength,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        child: Text(
+                            localAnswers.elementAt(index)["response"].toString()),
+                        onPressed: () => getAnswer(
+                          parseBool(localAnswers
+                              .elementAt(index)["isExact"]
+                              .toString()),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minWidth: width(context) * 3 / 4),
-                    child: RaisedButton(
-                      child:
-                          Text(localAnswers.elementAt(1)["response"].toString()),
-                      onPressed: () => getAnswer(
-                        parseBool(
-                            localAnswers.elementAt(1)["isExact"].toString()),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minWidth: width(context) * 3 / 4),
-                    child: RaisedButton(
-                      child:
-                          Text(localAnswers.elementAt(2)["response"].toString()),
-                      onPressed: () => getAnswer(
-                        parseBool(
-                            localAnswers.elementAt(2)["isExact"].toString()),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                    );
+                  }),
             ),
           ],
         ),

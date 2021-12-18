@@ -1,7 +1,7 @@
-import 'package:first_app/src/datas/questions_data.dart';
-import 'package:first_app/src/helpers/navigation_helper.dart';
-import 'package:first_app/src/models/question_model.dart';
-import 'package:first_app/src/views/screens/result.dart';
+import 'package:quizz/src/datas/questions_data.dart';
+import 'package:quizz/src/helpers/navigation_helper.dart';
+import 'package:quizz/src/models/question_model.dart';
+import 'package:quizz/src/views/screens/result.dart';
 import 'package:flutter/material.dart';
 
 class QuestionService {
@@ -91,6 +91,18 @@ class QuestionService {
         break;
       case Houses.baratheon:
         _questions.selectedHouse = houseBaratheon;
+        break;
+      case Houses.martell:
+        _questions.selectedHouse = houseMartell;
+        break;
+      case Houses.grejoy:
+        _questions.selectedHouse = houseGrejoy;
+        break;
+      case Houses.tully:
+        _questions.selectedHouse = houseTully;
+        break;
+      case Houses.tyrell:
+        _questions.selectedHouse = houseTyrell;
         break;
       default:
         _questions.selectedHouse = houseStark;

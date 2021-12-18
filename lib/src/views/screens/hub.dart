@@ -1,10 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:first_app/src/datas/questions_data.dart';
-import 'package:first_app/src/helpers/navigation_helper.dart';
-import 'package:first_app/src/helpers/view_helper.dart';
-import 'package:first_app/src/services/question_service.dart';
-import 'package:first_app/src/views/screens/question.dart';
+import 'package:quizz/src/datas/questions_data.dart';
+import 'package:quizz/src/helpers/navigation_helper.dart';
+import 'package:quizz/src/helpers/view_helper.dart';
+import 'package:quizz/src/services/question_service.dart';
+import 'package:quizz/src/views/screens/question.dart';
 import 'package:flutter/material.dart';
 
 class Hub extends StatefulWidget {
@@ -28,48 +28,156 @@ class _HubState extends State<Hub> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const Padding(
-          padding: EdgeInsets.all(32.0),
-          child: Text(
-            "Pick your house",
-            style: TextStyle(
-                color: Colors.black, fontSize: 24, decorationThickness: 0),
-          ),
-        ),
-        Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Quizz App"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minWidth: width(context) * 3 / 5),
-                child: RaisedButton(
-                    child: const Text("House Stark"),
-                    onPressed: () => getRightQuizz(Houses.stark)),
+            const Padding(
+              padding: EdgeInsets.all(32.0),
+              child: Text(
+                "Pick your house",
+                style: TextStyle(
+                    color: Colors.black, fontSize: 24, decorationThickness: 0),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minWidth: width(context) * 3 / 5),
-                child: RaisedButton(
-                    child: const Text("House Lannister"),
-                    onPressed: () => getRightQuizz(Houses.lannister)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(minWidth: width(context) * 3 / 5),
-                child: RaisedButton(
-                    child: const Text("House Baratheon"),
-                    onPressed: () => getRightQuizz(Houses.baratheon)),
-              ),
+            Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/2.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Stark"),
+                      onTap: () => getRightQuizz(Houses.stark),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/3.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Lannister"),
+                      onTap: () => getRightQuizz(Houses.lannister),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Baratheon"),
+                      onTap: () => getRightQuizz(Houses.baratheon),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Martell"),
+                      onTap: () => getRightQuizz(Houses.martell),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Grejoy"),
+                      onTap: () => getRightQuizz(Houses.grejoy),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Tully"),
+                      onTap: () => getRightQuizz(Houses.tully),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0),
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(maxWidth: width(context) * 2 / 3),
+                    child: ListTile(
+                      style: ListTileStyle.list,
+                      tileColor: const Color(0xffe0e0e0),
+                      leading: const CircleAvatar(
+                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        radius: 16,
+                      ),
+                      title: const Text("House Tyrell"),
+                      onTap: () => getRightQuizz(Houses.tyrell),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 }

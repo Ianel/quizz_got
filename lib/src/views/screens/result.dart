@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:first_app/src/helpers/navigation_helper.dart';
-import 'package:first_app/src/services/question_service.dart';
-import 'package:first_app/src/views/screens/hub.dart';
+import 'package:quizz/src/helpers/navigation_helper.dart';
+import 'package:quizz/src/services/question_service.dart';
+import 'package:quizz/src/views/screens/hub.dart';
 import 'package:flutter/material.dart';
 
 class Result extends StatefulWidget {
@@ -20,6 +20,23 @@ class _ResultState extends State<Result> {
   void goToHomepage() {
     service.resetData();
     goTo(context, const Hub(), isReplaced: true);
+  }
+
+  AssetImage displayImage(String level) {
+    switch (level) {
+      case "Jester":
+        return const AssetImage("assets/images/2.jpg");
+      case "Squire":
+        return const AssetImage("assets/images/3.jpg");
+      case "Knight":
+        return const AssetImage("assets/images/4.jpg");
+      case "Royal Guard":
+        return const AssetImage("assets/images/2.jpg");
+      case "Legend":
+        return const AssetImage("assets/images/3.jpg");
+    }
+
+    return const AssetImage("assets/images/2.jpg");
   }
 
   @override
@@ -42,10 +59,10 @@ class _ResultState extends State<Result> {
       body: Center(
         child: Column(
           children: <Widget>[
-            Padding(
+            /*  Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text("You have ${widget.points} points"),
-            ),
+            ), */
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text.rich(
@@ -53,10 +70,21 @@ class _ResultState extends State<Result> {
                   text: "You're a ",
                   style: const TextStyle(fontSize: 24),
                   children: [
-                    TextSpan(text: level, style: const TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(
+                        text: level,
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
+            ),
+            Image(
+              image: displayImage(level),
+              width: 240,
+              height: 240,
+              alignment: Alignment.center,
+              repeat: ImageRepeat.noRepeat,
+              fit: BoxFit.cover,
+              filterQuality: FilterQuality.high,
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),

@@ -60,12 +60,14 @@ void main() {
 
   var res = houseStark2["questions"]![2];
   var ques = houseStark2["answers"]![0] as List;
-  //print(res);
-  print(houseStark2.runtimeType);
+  print(ques);
+  //print(houseStark2.runtimeType);
+
+  //showAnswers(ques);
 
   getLibrary(Libraries.vue);
 
-  var answers = [
+/*   var answers = [
     {
       "question": [
         {"response": "Blue", "isExact": true},
@@ -79,7 +81,7 @@ void main() {
         {"response": "Ere d'Ultron", "isExact": true},
         {"response": "Justice League", "isExact": false},
       ]
-    },
+    }, 
   ];
 
   print("${answers[0]["question"]![0]["isExact"]}");
@@ -88,7 +90,7 @@ void main() {
   // answer = bool.fromEnvironment(answer);
   String e = "true";
   dynamic answer = bool.fromEnvironment(e);
-  print(answer);
+  print(answer);*/
 }
 
 bool parseBool(String value) {
@@ -101,4 +103,12 @@ parseData(Map data) {
 
   print("Questions: $question");
   print("Answers: $answers");
+}
+
+void showAnswers(List answer) {
+  for (var i = 0; i < answer.length; i++) {
+    var tmpAnswer = answer[i] as Map;
+
+    print(tmpAnswer["response"]);
+  }
 }

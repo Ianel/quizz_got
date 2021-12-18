@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:first_app/src/views/screens/hub.dart';
+import 'package:quizz/src/views/screens/hub.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
