@@ -64,6 +64,20 @@ class _ResultState extends State<Result> {
               child: Text("You have ${widget.points} points"),
             ), */
             Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text.rich(
+                TextSpan(
+                    text: "SCORE: ",
+                    style: TextStyle(fontSize: 16),
+                    children: [
+                      TextSpan(
+                        text: "${widget.points} points",
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ]),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text.rich(
                 TextSpan(

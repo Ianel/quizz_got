@@ -4,7 +4,7 @@ import 'package:quizz/src/datas/questions_data.dart';
 import 'package:quizz/src/helpers/navigation_helper.dart';
 import 'package:quizz/src/helpers/view_helper.dart';
 import 'package:quizz/src/services/question_service.dart';
-import 'package:quizz/src/views/screens/question.dart';
+import 'package:quizz/src/views/screens/background_intermediate.dart.dart';
 import 'package:flutter/material.dart';
 
 class Hub extends StatefulWidget {
@@ -17,13 +17,8 @@ class Hub extends StatefulWidget {
 class _HubState extends State<Hub> {
   final QuestionService service = QuestionService();
 
-  void getRightQuizz(Houses house) {
-    try {
-      service.redirectToQuizz(house);
-      goTo(context, Question(service: service), isReplaced: true);
-    } on Exception catch (_, e) {
-      print(e);
-    }
+  void showBackground(Houses house) {
+    goTo(context, ImageScreen(house: house), isReplaced: true);
   }
 
   @override
@@ -57,11 +52,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Stark.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Stark.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Stark"),
-                      onTap: () => getRightQuizz(Houses.stark),
+                      onTap: () => showBackground(Houses.stark),
                     ),
                   ),
                 ),
@@ -75,11 +71,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Lannister.jpeg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Lannister.jpeg"),
                         radius: 16,
                       ),
                       title: const Text("House Lannister"),
-                      onTap: () => getRightQuizz(Houses.lannister),
+                      onTap: () => showBackground(Houses.lannister),
                     ),
                   ),
                 ),
@@ -93,11 +90,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Baratheon.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Baratheon.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Baratheon"),
-                      onTap: () => getRightQuizz(Houses.baratheon),
+                      onTap: () => showBackground(Houses.baratheon),
                     ),
                   ),
                 ),
@@ -111,11 +109,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Martell.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Martell.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Martell"),
-                      onTap: () => getRightQuizz(Houses.martell),
+                      onTap: () => showBackground(Houses.martell),
                     ),
                   ),
                 ),
@@ -129,11 +128,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Greyjoy.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Greyjoy.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Grejoy"),
-                      onTap: () => getRightQuizz(Houses.grejoy),
+                      onTap: () => showBackground(Houses.grejoy),
                     ),
                   ),
                 ),
@@ -147,11 +147,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Tully.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Tully.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Tully"),
-                      onTap: () => getRightQuizz(Houses.tully),
+                      onTap: () => showBackground(Houses.tully),
                     ),
                   ),
                 ),
@@ -165,11 +166,12 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/House Tyrell.jpg"),
+                        foregroundImage:
+                            AssetImage("assets/images/House Tyrell.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Tyrell"),
-                      onTap: () => getRightQuizz(Houses.tyrell),
+                      onTap: () => showBackground(Houses.tyrell),
                     ),
                   ),
                 ),

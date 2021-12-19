@@ -110,6 +110,27 @@ class QuestionService {
     }
   }
 
+  String selectImage(Houses house) {
+    switch (house) {
+      case Houses.stark:
+        return "House Stark.jpg";
+      case Houses.lannister:
+        return "House Lannister.jpeg";
+      case Houses.baratheon:
+        return "House Baratheon.jpg";
+      case Houses.grejoy:
+        return "House Greyjoy.jpg";
+      case Houses.tully:
+        return "House Tully.jpg";
+      case Houses.martell:
+        return "House Martell.jpg";
+      case Houses.tyrell:
+        return "House Tyrell.jpg";
+      default:
+        return "House Stark.jpg";
+    }
+  }
+
   void resetData() {
     _questions.points = 0;
     _questions.questionOrder = 0;

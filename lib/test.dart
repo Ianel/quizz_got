@@ -58,6 +58,8 @@ void main() {
     ]
   };
 
+  var state = "New York";
+
   var res = houseStark2["questions"]![2];
   var ques = houseStark2["answers"]![0] as List;
   print(ques);
