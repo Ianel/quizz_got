@@ -68,7 +68,7 @@ class _ResultState extends State<Result> {
               child: Text.rich(
                 TextSpan(
                     text: "SCORE: ",
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 20),
                     children: [
                       TextSpan(
                         text: "${widget.points} points",
