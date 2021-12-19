@@ -57,7 +57,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/2.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Stark.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Stark"),
@@ -75,7 +75,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/3.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Lannister.jpeg"),
                         radius: 16,
                       ),
                       title: const Text("House Lannister"),
@@ -93,7 +93,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Baratheon.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Baratheon"),
@@ -111,7 +111,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Martell.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Martell"),
@@ -129,7 +129,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Greyjoy.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Grejoy"),
@@ -147,7 +147,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Tully.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Tully"),
@@ -165,7 +165,7 @@ class _HubState extends State<Hub> {
                       style: ListTileStyle.list,
                       tileColor: const Color(0xffe0e0e0),
                       leading: const CircleAvatar(
-                        foregroundImage: AssetImage("assets/images/4.jpg"),
+                        foregroundImage: AssetImage("assets/images/House Tyrell.jpg"),
                         radius: 16,
                       ),
                       title: const Text("House Tyrell"),

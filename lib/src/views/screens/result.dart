@@ -25,18 +25,18 @@ class _ResultState extends State<Result> {
   AssetImage displayImage(String level) {
     switch (level) {
       case "Jester":
-        return const AssetImage("assets/images/2.jpg");
+        return const AssetImage("assets/images/GOT - Jester.jpg");
       case "Squire":
-        return const AssetImage("assets/images/3.jpg");
+        return const AssetImage("assets/images/GOT - Squire.png");
       case "Knight":
-        return const AssetImage("assets/images/4.jpg");
+        return const AssetImage("assets/images/GOT - Knight.jpg");
       case "Royal Guard":
-        return const AssetImage("assets/images/2.jpg");
+        return const AssetImage("assets/images/GOT - Royal Guard.jpg");
       case "Legend":
-        return const AssetImage("assets/images/3.jpg");
+        return const AssetImage("assets/images/GOT - Legend.jpg");
     }
 
-    return const AssetImage("assets/images/2.jpg");
+    return const AssetImage("assets/images/GOT - Jester.jpg");
   }
 
   @override
